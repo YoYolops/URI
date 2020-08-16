@@ -36,8 +36,6 @@ while len(regioes) != len(saltosPossiveis):
             if len(opcao) == 0:
                 break
 
-    print(opcao)
-    print(regioes)
     print(saltosPossiveis)
 
 """     print('passo final: %d'%passo) """

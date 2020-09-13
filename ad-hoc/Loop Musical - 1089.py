@@ -1,5 +1,7 @@
 """ TIME LIMIT EXCEEDED """
 
+""" O Programa funciona! Mas não responde em tempo ágil, como aumentar a eficiência? """
+
 while True:
     n = int(input())
 

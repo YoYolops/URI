@@ -4,8 +4,7 @@ indlet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 
 listaDeListas = []
 pospecas = []
-pecas = NAN
-
+contadorGeral = 0
 
 def puloCavalo(cal):
     casascavalo = []
@@ -42,14 +41,14 @@ def puloCavalo(cal):
 def dominioPeao(peao):
     casasdominadas = []
 
-    for i in peao:
+    for j in peao:
 
-        if i[1] != '1':
-            if i[1] != 'a':
-                esquerda = indnum[indnum.index(i[0]) - 1] + indlet[indlet.index(i[1]) - 1]
+        if j[1] != '1':
+            if j[1] != 'a':
+                esquerda = indnum[indnum.index(j[0]) - 1] + indlet[indlet.index(j[1]) - 1]
                 casasdominadas.append(esquerda)
-            if i[1] != 'h':
-                direita = indnum[indnum.index(i[0]) - 1] + indlet[indlet.index(i[1]) + 1]
+            if j[1] != 'h':
+                direita = indnum[indnum.index(j[0]) - 1] + indlet[indlet.index(j[1]) + 1]
                 casasdominadas.append(direita)
 
     return casasdominadas
@@ -64,7 +63,7 @@ def solucao(caso):
             cont += 1
 
     resposta = len(a) - cont
-    print('Caso de Teste #%d: %d movimento(s).'%(,resposta))
+    print('Caso de Teste #%d: %d movimento(s).'%(contadorGeral, resposta))
 
 
 while True:
@@ -79,16 +78,13 @@ while True:
         listaDeListas.append(pospecas)
         pospecas = []
 
-    else:
-        cavalo = pospecas[0]
-        pospecas.pop(0)
-        solucao()
 
-for i in len(listaDeListas):
-    
+for i in range(len(listaDeListas)):
+    contadorGeral += 1
+
     cavalo = listaDeListas[i][0]
     listaDeListas[i].pop(0)
-    solucao(i)
+    solucao(listaDeListas[i])
 
 
         

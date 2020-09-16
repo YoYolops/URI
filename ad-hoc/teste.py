@@ -1,11 +1,23 @@
 
-#indnum = ['1', '2', '3', '4', '5', '6', '7', '8']
-#indlet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+indnum = ['1', '2', '3', '4', '5', '6', '7', '8']
+indlet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 
-#pospecas = []
+pospecas = []
+listaDeListas = []
 
+while True:
+    pecas = input()
 
+    if pecas == '0':
+        break
 
-for i in range(5):
-    print(i)
+    pospecas.append(pecas)
+
+    if len(pospecas) == 8:
+        listaDeListas.append(pospecas)
+        pospecas = []
+
+    print(listaDeListas)
+    
+
 

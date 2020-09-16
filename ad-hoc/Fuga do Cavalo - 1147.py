@@ -1,4 +1,3 @@
-
 indnum = ['1', '2', '3', '4', '5', '6', '7', '8']
 indlet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 
@@ -9,32 +8,38 @@ contadorGeral = 0
 def puloCavalo(cal):
     casascavalo = []
     if cal[0] not in ['7','8']:
-        cima = [ indnum[indnum.index(cal[0]) + 2] + indlet[indlet.index(cal[1]) + 1], indnum[indnum.index(cal[0]) + 2] + indlet[indlet.index(cal[1]) - 1] ]
         if cal[1] != 'h':
-            casascavalo.append(cima[0])
+            cimaRight = indnum[indnum.index(cal[0]) + 2] + indlet[indlet.index(cal[1]) + 1]
+            casascavalo.append(cimaRight)
         if cal[1] != 'a':
-            casascavalo.append(cima[1])
+            cimaLeft = indnum[indnum.index(cal[0]) + 2] + indlet[indlet.index(cal[1]) - 1]
+            casascavalo.append(cimaLeft)
 
     if cal[0] not in ['1','2']:
-        baixo = [ indnum[indnum.index(cal[0]) - 2] + indlet[indlet.index(cal[1]) + 1], indnum[indnum.index(cal[0]) - 2] + indlet[indlet.index(cal[1]) - 1] ]
+        baixo = indnum[indnum.index(cal[0]) - 2] + indlet[indlet.index(cal[1]) - 1]
         if cal[1] != 'h':
-            casascavalo.append(baixo[0])
+            baixoRight = indnum[indnum.index(cal[0]) - 2] + indlet[indlet.index(cal[1]) + 1]
+            casascavalo.append(baixoRight)
         if cal[1] != 'a':
-            casascavalo.append(baixo[1])
+            baixoLeft = indnum[indnum.index(cal[0]) - 2] + indlet[indlet.index(cal[1]) - 1]
+            casascavalo.append(baixoLeft)
 
     if cal[1] not in ['g','h']:
-        direita = [ indnum[indnum.index(cal[0]) + 1] + indlet[indlet.index(cal[1]) + 2], indnum[indnum.index(cal[0]) - 1] + indlet[indlet.index(cal[1]) + 2] ]
         if cal[0] != '8':
-            casascavalo.append(direita[0])
+            direitaUp = indnum[indnum.index(cal[0]) + 1] + indlet[indlet.index(cal[1]) + 2]
+            casascavalo.append(direitaUp)
         if cal[0] != '1':
-            casascavalo.append(direita[1])
+            direitaDown = indnum[indnum.index(cal[0]) - 1] + indlet[indlet.index(cal[1]) + 2]
+            casascavalo.append(direitaDown)
 
     if cal[1] not in ['a','b']:
-        esquerda = [ indnum[indnum.index(cal[0]) + 1] + indlet[indlet.index(cal[1]) - 2], indnum[indnum.index(cal[0]) - 1] + indlet[indlet.index(cal[1]) - 2] ]
+        esquerda = indnum[indnum.index(cal[0]) - 1] + indlet[indlet.index(cal[1]) - 2]
         if cal[0] != '8':
-            casascavalo.append(esquerda[0])
+            esquerdaUp = indnum[indnum.index(cal[0]) + 1] + indlet[indlet.index(cal[1]) - 2]
+            casascavalo.append(esquerdaUp)
         if cal[0] != 1:
-            casascavalo.append(esquerda[1])
+            esquerdaDown = indnum[indnum.index(cal[0]) - 1] + indlet[indlet.index(cal[1]) - 2]
+            casascavalo.append(esquerdaDown)
         
     return casascavalo
 
@@ -74,7 +79,7 @@ while True:
 
     pospecas.append(pecas)
 
-    if len(pospecas) == 8:
+    if len(pospecas) == 9:
         listaDeListas.append(pospecas)
         pospecas = []
 

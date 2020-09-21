@@ -1,22 +1,16 @@
-"""python3 "Lanche - 1038.py" """
 
-cod, quant = split().input()
+produtos = {
+    '1':4.00,
+    '2':4.50,
+    '3':5.00,
+    '4':2.00,
+    '5':1.50
+}
 
-precos = {
-    'id': 1,
-    'preco': 4,
-    '2': 4.5,
-    '3': 5,
-    '4': 2,
-    '5': 1,5
-    }
-
-cod = str(int(cod))
+codigo, quant = input().split()
+codigo = codigo
 quant = int(quant)
 
-for i in precos:
-    if cod == i:
-        valor = cod.value * quant
-        break
+total = (produtos[codigo]) * quant
 
-print("Total: R$ %.2f"%valor)
+print('Total: R$ %.2f'%total)

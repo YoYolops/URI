@@ -6,12 +6,12 @@ soma = 0
 if x < y:
     for i in range(x + 1, y):
         if i % 2 != 0:
-            print(i)
-            soma += i 
-else:
+            soma += i
+    print(soma)
+elif x > y:
     for i in range(y + 1, x):
         if i % 2 != 0:
-            print(i)
-            soma += i 
-
-print(soma)
+            soma += i
+    print(soma)
+else:      
+    print(soma)

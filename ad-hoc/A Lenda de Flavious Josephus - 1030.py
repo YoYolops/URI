@@ -1,39 +1,53 @@
 
-quantTeste = int(input())
-times = 0
-
-def matadora(lista, salto):
-    localMorte = salto - 1
+def matadora(lista, pulo):
+    localMorte = pulo - 1
     manip = list(lista)
     mortos = []
-    
-    while qPessoa != len(mortos) + 1:
-        mortos.append(lista[localMorte])
 
-        localMorte += 2
+    if pulo == 1:
+        return manip[qPessoa - 1]
+    else:
+        while qPessoa != len(mortos) + 1:
+            mortos.append(manip[localMorte])
 
-        if localMorte >= len(lista):
-            localMorte -= (len(manip) - len(mortos)) + 2
+            localMorte += pulo
 
-            for i in mortos:
-                manip.pop(manip.index(i))
-    
-    return manip[0]
 
-while quantTeste != 0:
-    times += 1
+            while localMorte >= len(manip):
+                localMorte = (pulo - ((len(manip) - 1) - (localMorte - pulo)) - 1)
+
+                for i in mortos:
+                    if i in manip:
+                        manip.pop(manip.index(i))
+            
+
+
+        return manip[0]
+
+quantTeste = int(input())
+times = 0
+casoTeste = []
+
+while quantTeste > 0:
     quantTeste -= 1
 
     qPessoa, salto = input().split()
     qPessoa = int(qPessoa)
     salto = int(salto)
+    casoTeste.append([qPessoa, salto])
+
+for i in casoTeste:
+    qPessoa = i[0]
+    salto = i[1]
+    times += 1
     pessoas = []
 
-    for i in range(1, qPessoa + 1):
-        pessoas.append(i)
-
+    for j in range(1, i[0] + 1):
+        pessoas.append(j)
+    
     saida = matadora(pessoas, salto)
 
     print('Case %d: %d'%(times, saida))
+
 
     

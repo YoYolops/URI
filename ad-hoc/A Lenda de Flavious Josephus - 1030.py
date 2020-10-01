@@ -1,3 +1,4 @@
+# TIME LIMIT EXCEEDED :(
 
 def matadora(lista, pulo):
     localMorte = pulo - 1

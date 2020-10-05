@@ -43,7 +43,7 @@ for i in casoTeste:
     times += 1
     pessoas = []
 
-    for j in range(1, i[0] + 1):
+    pessoas = list(range(1, i[0] + 1)):
         pessoas.append(j)
     
     saida = matadora(pessoas, salto)
@@ -51,4 +51,3 @@ for i in casoTeste:
     print('Case %d: %d'%(times, saida))
 
 
-    
